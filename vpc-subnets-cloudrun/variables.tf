@@ -24,6 +24,17 @@ variable "subnet_cidrs" {
   type        = list(string)
 }
 
+variable "vpc_connector_name" {
+  description = "The name of the VPC Access Connector."
+  type        = string
+}
+
+variable "vpc_connector_ip_cidr_range" {
+  description = "The IP CIDR range for the VPC Access Connector."
+  type        = string
+  default     = "10.8.0.0/28"  # Ensure this is a /28 subnet
+}
+
 variable "cloud_run_service_name" {
   description = "The name of the Cloud Run service."
   type        = string
